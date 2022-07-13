@@ -1,6 +1,6 @@
 {
     "name": "TC-ArtCraft-Motor",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Motor controller for TomatoCube Art and Craft projects",
     "license": "MIT",
     "dependencies": {

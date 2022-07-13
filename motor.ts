@@ -18,6 +18,9 @@ namespace motorbit {
   let MOTORA_PIN0 = DigitalPin.P12
   let MOTORA_PIN1 = DigitalPin.P13
 
+  let MOTORA_APIN0 = AnalogPin.P12
+  let MOTORA_APIN1 = AnalogPin.P13
+
   const motorRotations = [
     MakerBitMotorRotation.Forward
   ];
@@ -40,6 +43,41 @@ namespace motorbit {
   ): void {
       MOTORA_PIN0 = pin0
       MOTORA_PIN1 = pin1
+
+      MOTORA_APIN0 = (pin0 == DigitalPin.P0) ? AnalogPin.P0:
+                     (pin0 == DigitalPin.P1) ? AnalogPin.P1:
+                     (pin0 == DigitalPin.P2) ? AnalogPin.P2:
+                     (pin0 == DigitalPin.P3) ? AnalogPin.P3:
+                     (pin0 == DigitalPin.P4) ? AnalogPin.P4:
+                     (pin0 == DigitalPin.P5) ? AnalogPin.P5:
+                     (pin0 == DigitalPin.P6) ? AnalogPin.P6:
+                     (pin0 == DigitalPin.P7) ? AnalogPin.P7:
+                     (pin0 == DigitalPin.P8) ? AnalogPin.P8:
+                     (pin0 == DigitalPin.P9) ? AnalogPin.P9:
+                     (pin0 == DigitalPin.P10) ? AnalogPin.P10:
+                     (pin0 == DigitalPin.P11) ? AnalogPin.P11:
+                     (pin0 == DigitalPin.P12) ? AnalogPin.P12:
+                     (pin0 == DigitalPin.P13) ? AnalogPin.P13:
+                     (pin0 == DigitalPin.P14) ? AnalogPin.P14:
+                     (pin0 == DigitalPin.P15) ? AnalogPin.P15:
+                     AnalogPin.P16;
+      MOTORA_APIN1 = (pin1 == DigitalPin.P0) ? AnalogPin.P0:
+                     (pin1 == DigitalPin.P1) ? AnalogPin.P1:
+                     (pin1 == DigitalPin.P2) ? AnalogPin.P2:
+                     (pin1 == DigitalPin.P3) ? AnalogPin.P3:
+                     (pin1 == DigitalPin.P4) ? AnalogPin.P4:
+                     (pin1 == DigitalPin.P5) ? AnalogPin.P5:
+                     (pin1 == DigitalPin.P6) ? AnalogPin.P6:
+                     (pin1 == DigitalPin.P7) ? AnalogPin.P7:
+                     (pin1 == DigitalPin.P8) ? AnalogPin.P8:
+                     (pin1 == DigitalPin.P9) ? AnalogPin.P9:
+                     (pin1 == DigitalPin.P10) ? AnalogPin.P10:
+                     (pin1 == DigitalPin.P11) ? AnalogPin.P11:
+                     (pin1 == DigitalPin.P12) ? AnalogPin.P12:
+                     (pin1 == DigitalPin.P13) ? AnalogPin.P13:
+                     (pin1 == DigitalPin.P14) ? AnalogPin.P14:
+                     (pin1 == DigitalPin.P15) ? AnalogPin.P15:
+                     AnalogPin.P16;
   }
 
   /**
@@ -67,7 +105,7 @@ namespace motorbit {
       // Avoid PWM whenever possible as only 3 concurrent PWM outputs are available on the microbit
       pins.digitalWritePin(isClockwise ? MOTORA_PIN1: MOTORA_PIN0, 1);
     } else {
-      pins.analogWritePin(isClockwise ? MOTORA_PIN1: MOTORA_PIN0, analogSpeed);
+      pins.analogWritePin(isClockwise ? MOTORA_APIN1: MOTORA_APIN0, analogSpeed);
     }
     
 

@@ -35,7 +35,7 @@ namespace motorbit {
   //% pin1.fieldOptions.tooltips="false"
   //% weight=91
   export function setMotorPin(
-    pin0: DigitalPin
+    pin0: DigitalPin,
     pin1: DigitalPin
   ): void {
       MOTORA_PIN0 = pin0
